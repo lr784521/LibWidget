@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatEditText;
 
-
-import com.huayun.lib_tools.util.StringUtil;
+import com.huayun.lib_tools.util.screen.ScreenUtil;
 import com.huayun.lib_widget.R;
 
 import java.lang.reflect.Field;
@@ -99,22 +98,22 @@ public class WidSplitEditTextView extends AppCompatEditText{
 
     private void initAttrs(Context c, AttributeSet attrs) {
         TypedArray array = c.obtainStyledAttributes(attrs, R.styleable.WidSplitEditTextView);
-        mBorderSize = array.getDimension(R.styleable.WidSplitEditTextView_borderSize, StringUtil.dp2px(1f));
+        mBorderSize = array.getDimension(R.styleable.WidSplitEditTextView_borderSize, ScreenUtil.dp2px(1f));
         mBorderColor = array.getColor(R.styleable.WidSplitEditTextView_borderColor, Color.BLACK);
         mCornerSize = array.getDimension(R.styleable.WidSplitEditTextView_corner_size, 0f);
-        mDivisionLineSize = array.getDimension(R.styleable.WidSplitEditTextView_divisionLineSize, StringUtil.dp2px(1f));
+        mDivisionLineSize = array.getDimension(R.styleable.WidSplitEditTextView_divisionLineSize, ScreenUtil.dp2px(1f));
         mDivisionColor = array.getColor(R.styleable.WidSplitEditTextView_divisionLineColor, Color.BLACK);
-        mCircleRadius = array.getDimension(R.styleable.WidSplitEditTextView_circleRadius, StringUtil.dp2px(5f));
+        mCircleRadius = array.getDimension(R.styleable.WidSplitEditTextView_circleRadius, ScreenUtil.dp2px(5f));
         mContentNumber = array.getInt(R.styleable.WidSplitEditTextView_contentNumber, 6);
         mContentShowMode = array.getInteger(R.styleable.WidSplitEditTextView_contentShowMode, CONTENT_SHOW_MODE_PASSWORD);
         mInputBoxStyle = array.getInteger(R.styleable.WidSplitEditTextView_inputBoxStyle, INPUT_BOX_STYLE_CONNECT);
-        mSpaceSize = array.getDimension(R.styleable.WidSplitEditTextView_spaceSize, StringUtil.dp2px(10f));
-        mTextSize = array.getDimension(R.styleable.WidSplitEditTextView_android_textSize, StringUtil.sp2px(16f));
+        mSpaceSize = array.getDimension(R.styleable.WidSplitEditTextView_spaceSize, ScreenUtil.dp2px(10f));
+        mTextSize = array.getDimension(R.styleable.WidSplitEditTextView_android_textSize, ScreenUtil.sp2px(16f));
         mTextColor = array.getColor(R.styleable.WidSplitEditTextView_android_textColor, Color.BLACK);
         mInputBoxSquare = array.getBoolean(R.styleable.WidSplitEditTextView_inputBoxSquare, true);
         mCursorColor = array.getColor(R.styleable.WidSplitEditTextView_cursorColor, Color.BLACK);
         mCursorDuration = array.getInt(R.styleable.WidSplitEditTextView_cursorDuration, 500);
-        mCursorWidth = array.getDimension(R.styleable.WidSplitEditTextView_cursorWidth, StringUtil.dp2px(2f));
+        mCursorWidth = array.getDimension(R.styleable.WidSplitEditTextView_cursorWidth, ScreenUtil.dp2px(2f));
         mCursorHeight = (int) array.getDimension(R.styleable.WidSplitEditTextView_cursorHeight, 0);
         mUnderlineNormalColor = array.getInt(R.styleable.WidSplitEditTextView_underlineNormalColor, Color.BLACK);
         mUnderlineFocusColor = array.getInt(R.styleable.WidSplitEditTextView_underlineFocusColor, 0);
