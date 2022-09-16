@@ -37,6 +37,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.hysz.lib_tools:lib_tools:0.0.2-SNAPSHOT'
-    implementation 'com.hysz.lib_baseview:lib_baseview:0.0.2-SNAPSHOT'
+    implementation 'com.hysz.lib_baseview:lib_baseview:0.0.3-SNAPSHOT'
 
 }
