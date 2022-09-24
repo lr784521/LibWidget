@@ -28,8 +28,8 @@ public class WidCustomizeClearEditText extends AppCompatEditText {
     private int editBackgroundResourceDrawable = R.drawable.shape_edit_text_statue;
     //是否显示清除按钮
     private boolean isShowClear = true;
-
     private String textContent; //当前输入内容
+    private Drawable clearImg;//清除图标
 
     public WidCustomizeClearEditText(Context context) {
         super(context);
@@ -50,6 +50,7 @@ public class WidCustomizeClearEditText extends AppCompatEditText {
 
             editBackgroundResourceDrawable= typedArray.getResourceId(R.styleable.WidCustomizeClearEditText_editBackgroundResourceDrawable, R.drawable.shape_edit_text_statue);
             isShowClear=typedArray.getBoolean(R.styleable.WidCustomizeClearEditText_isShowClear,true);
+            clearImg = typedArray.getDrawable(R.styleable.WidCustomizeClearEditText_clearImg);
 
             //释放资源
             typedArray.recycle();
@@ -96,8 +97,10 @@ public class WidCustomizeClearEditText extends AppCompatEditText {
             return;
         }
         if (isVisible) {
-            Drawable ivClear = getContext().getDrawable(R.drawable.iv_edit_clear);
-            setCompoundDrawablesWithIntrinsicBounds(null, null, ivClear, null);
+            if(clearImg==null){
+                clearImg=getContext().getDrawable(R.drawable.iv_edit_clear);
+            }
+            setCompoundDrawablesWithIntrinsicBounds(null, null, clearImg, null);
         } else {
             setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
         }

@@ -43,9 +43,9 @@ dependencies {
 
 
     //本地仓库/远程仓库使用方式
-    implementation 'com.hysz.lib_widget:lib_widget:0.0.4-SNAPSHOT'
+//    implementation 'com.hysz.lib_widget:lib_widget:0.0.4-SNAPSHOT'
     //aar直接依赖方式
 //    implementation(name: 'lib_widget-1.0.0', ext: 'aar')
 
-//    implementation project(path: ':lib_widget')
+    implementation project(path: ':lib_widget')
 }

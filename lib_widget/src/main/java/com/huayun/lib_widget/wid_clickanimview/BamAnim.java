@@ -46,12 +46,12 @@ public class BamAnim {
     /**
      * 动画执行速度
      */
-    public static final int ANIM_SPEED = 300;
+    public static int ANIM_SPEED = 300;
 
     /**
      * 旋转角度
      */
-    private static final float POTATION_VALUE = 7f;
+    private static float POTATION_VALUE = 7f;
 
     /**
      * 变速器
@@ -61,12 +61,12 @@ public class BamAnim {
     /**
      * 缩放比例
      */
-    private static final float SCALE_END = 0.95f;
+    public static float SCALE_END = 0.95f;
 
     /**
      * 阴影最小值
      */
-    private static final float SHADOW_END = 0;
+    public static float SHADOW_END = 0;
 
     /**
      * 启动按压动画
@@ -227,6 +227,13 @@ public class BamAnim {
      * 【缩放效果】从大过渡到小
      */
     public static void froBig_ToSmall(View view) {
+        froBig_ToSmall(view, SHADOW_END, SCALE_END, ANIM_SPEED);
+    }
+
+    /**
+     * 【缩放效果】从大过渡到小
+     */
+    public static void froBig_ToSmall(View view, float shadow_end, float scale_end, int anim_speed) {
         try {
             float tzStart = 0;
             Object viewTag = view.getTag(R.string.tag_key_translation_z);
@@ -240,20 +247,20 @@ public class BamAnim {
             /**
              * Z轴变低
              */
-            PropertyValuesHolder tz = PropertyValuesHolder.ofFloat("translationZ", tzStart, SHADOW_END);
+            PropertyValuesHolder tz = PropertyValuesHolder.ofFloat("translationZ", tzStart, shadow_end);
             /**
              * 控件的宽变小
              */
-            PropertyValuesHolder sx = PropertyValuesHolder.ofFloat("scaleX", view.getScaleX(), SCALE_END);
+            PropertyValuesHolder sx = PropertyValuesHolder.ofFloat("scaleX", view.getScaleX(), scale_end);
             /**
              * 控件的高变小
              */
-            PropertyValuesHolder sy = PropertyValuesHolder.ofFloat("scaleY", view.getScaleY(), SCALE_END);
+            PropertyValuesHolder sy = PropertyValuesHolder.ofFloat("scaleY", view.getScaleY(), scale_end);
 
             /**
              * 动画集合，所有动画一起播放
              */
-            ObjectAnimator animatorD = ObjectAnimator.ofPropertyValuesHolder(view, tz, sx, sy).setDuration(ANIM_SPEED);
+            ObjectAnimator animatorD = ObjectAnimator.ofPropertyValuesHolder(view, tz, sx, sy).setDuration(anim_speed);
             animatorD.setInterpolator(interpolator);
             animatorD.start();
         } catch (Exception e) {
@@ -265,6 +272,13 @@ public class BamAnim {
      * 【缩放效果】从小过渡到大
      */
     public static void froSmall_ToBig(View view) {
+        froSmall_ToBig(view, ANIM_SPEED);
+    }
+
+    /**
+     * 【缩放效果】从小过渡到大
+     */
+    public static void froSmall_ToBig(View view, int anim_speed) {
         try {
             float tzStart = 0, tzEnd = 0;
             Object viewTag = view.getTag(R.string.tag_key_translation_z);
@@ -291,7 +305,7 @@ public class BamAnim {
             /**
              * 动画集合，所有动画一起播放
              */
-            ObjectAnimator animatorD = ObjectAnimator.ofPropertyValuesHolder(view, tz, sx, sy).setDuration(ANIM_SPEED);
+            ObjectAnimator animatorD = ObjectAnimator.ofPropertyValuesHolder(view, tz, sx, sy).setDuration(anim_speed);
             animatorD.setInterpolator(interpolator);
             animatorD.start();
         } catch (Exception e) {

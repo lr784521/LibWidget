@@ -88,24 +88,20 @@ public class BamLinearLayout extends LinearLayout {
 	@Override
 	@SuppressLint("ClickableViewAccessibility")
 	public boolean onTouchEvent(MotionEvent event) {
-
 		switch (event.getAction()) {
 			// 手指按下
 			case MotionEvent.ACTION_DOWN:
 				pivot = BamAnim.startAnimDown(this, superb, event.getX(), event.getY());
 				break;
-
 			// 触摸动作取消
 			case MotionEvent.ACTION_CANCEL:
 				// 手指抬起
 			case MotionEvent.ACTION_UP:
 				BamAnim.startAnimUp(this, pivot);
 				break;
-
 			default:
 				break;
 		}
-
 		return super.onTouchEvent(event);
 	}
 }

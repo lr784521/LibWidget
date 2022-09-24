@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.RadioButton;
 
+import androidx.appcompat.widget.AppCompatRadioButton;
+
 /**
  * 自定义 RadioButton 支持点击缩小、松开放大的功能
  *
@@ -40,7 +42,7 @@ import android.widget.RadioButton;
  * @author Bamboy
  * 
  */
-public class BamRadioButton extends RadioButton {
+public class BamRadioButton extends AppCompatRadioButton {
 
 	/**
 	 * 动画模式【true：华丽效果——缩放加方向】【false：只缩放】
@@ -88,24 +90,20 @@ public class BamRadioButton extends RadioButton {
 	@Override
 	@SuppressLint("ClickableViewAccessibility")
 	public boolean onTouchEvent(MotionEvent event) {
-
 		switch (event.getAction()) {
 			// 手指按下
 			case MotionEvent.ACTION_DOWN:
 				pivot = BamAnim.startAnimDown(this, superb, event.getX(), event.getY());
 				break;
-
 			// 触摸动作取消
 			case MotionEvent.ACTION_CANCEL:
 				// 手指抬起
 			case MotionEvent.ACTION_UP:
 				BamAnim.startAnimUp(this, pivot);
 				break;
-
 			default:
 				break;
 		}
-
 		return super.onTouchEvent(event);
 	}
 }
