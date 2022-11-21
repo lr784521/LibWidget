@@ -1,5 +1,8 @@
 <resources>
 
+    <item name="tag_key_data" type="id"/>
+    <item name="tag_key_position" type="id"/>
+
     <string name="tag_key_translation_z" translatable="false">translation_z</string>
     <string name="refresh_footer_pulling" translatable="false">上拉加载更多</string>
     <string name="refresh_footer_release" translatable="false">释放立即加载</string>
