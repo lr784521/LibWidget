@@ -305,4 +305,30 @@
     </declare-styleable>
 
 
+    <!--************** RadiusImageView ****************-->
+    <declare-styleable name="ImageViewRadius">
+        <attr name="iv_borderWidth" format="dimension"/>
+        <attr name="iv_borderColor" format="color"/>
+        <attr name="iv_selectedMaskColor" format="color"/>
+        <attr name="iv_selectedBorderColor" format="color"/>
+        <attr name="iv_selectedBorderWidth" format="dimension"/>
+        <attr name="iv_cornerRadius" format="dimension"/>
+        <attr name="iv_isOval" format="boolean"/>
+        <attr name="iv_isCircle" format="boolean"/>
+        <attr name="iv_isTouchSelectModeEnabled" format="boolean"/>
+
+        <!-- Round the top-left corner. Ignored if isOval isCircle is used. -->
+        <attr format="boolean" name="iv_roundTopLeft"/>
+        <!-- Round the top-right corner. Ignored if isOval isCircle is used. -->
+        <attr format="boolean" name="iv_roundTopRight"/>
+        <!-- Round the bottom-right corner. Ignored if isOval isCircle is used. -->
+        <attr format="boolean" name="iv_roundBottomRight"/>
+        <!-- Round the bottom-left corner. Ignored if isOval isCircle is used. -->
+        <attr format="boolean" name="iv_roundBottomLeft"/>
+        <!-- A drawable or color to be be used as a placeholder. -->
+        <attr format="reference" name="iv_placeholderImage"/>
+    </declare-styleable>
+
+    <attr name="ImageViewRadiusStyle" format="reference"/>
+
 </resources>
