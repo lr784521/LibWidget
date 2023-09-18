@@ -75,6 +75,7 @@ public class ImageViewRadius extends AppCompatImageView {
     @IdRes
     private int placeholderImage;
 
+
     public ImageViewRadius(Context context) {
         this(context, null, R.attr.ImageViewRadiusStyle);
     }
@@ -124,6 +125,7 @@ public class ImageViewRadius extends AppCompatImageView {
         }
 
         placeholderImage = array.getResourceId(R.styleable.ImageViewRadius_iv_placeholderImage, 0);
+
         array.recycle();
     }
 

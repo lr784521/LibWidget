@@ -327,6 +327,7 @@
         <attr format="boolean" name="iv_roundBottomLeft"/>
         <!-- A drawable or color to be be used as a placeholder. -->
         <attr format="reference" name="iv_placeholderImage"/>
+
     </declare-styleable>
 
     <attr name="ImageViewRadiusStyle" format="reference"/>

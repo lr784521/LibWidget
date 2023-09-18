@@ -53,7 +53,10 @@ public class BamTextView extends AppCompatTextView {
      * 即点击控件的任意部位，都只是缩放效果，与 华丽效果模式下 点击控件中间时的动画一样
      **/
     private boolean superb = true;
-
+    /**
+     * 是否关闭所有动画开关
+     */
+    private boolean closeAllAnim = false;
     /**
      * 顶点判断【0：中间】【1：上】【2：右】【3：下】【4：左】
      **/
@@ -88,19 +91,32 @@ public class BamTextView extends AppCompatTextView {
         superb = false;
     }
 
+    /**
+     * 设置全部动画开关
+     *
+     * @param closeAllAnim
+     */
+    public void setCloseAllAnim(boolean closeAllAnim) {
+        this.closeAllAnim = closeAllAnim;
+    }
+
     @Override
     @SuppressLint("ClickableViewAccessibility")
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             // 手指按下
             case MotionEvent.ACTION_DOWN:
-                pivot = BamAnim.startAnimDown(this, superb, event.getX(), event.getY());
+                if (!closeAllAnim) {
+                    pivot = BamAnim.startAnimDown(this, superb, event.getX(), event.getY());
+                }
                 break;
             // 触摸动作取消
             case MotionEvent.ACTION_CANCEL:
                 // 手指抬起
             case MotionEvent.ACTION_UP:
-                BamAnim.startAnimUp(this, pivot);
+                if (!closeAllAnim) {
+                    BamAnim.startAnimUp(this, pivot);
+                }
                 break;
             default:
                 break;
