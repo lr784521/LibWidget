@@ -2,7 +2,6 @@
 //maven插件在gradel7.0 已删除
 apply plugin: 'maven-publish'
 
-
 //如何打包发布
 //1. 打包到本地仓库
 // 1.1 在对应lib工程右侧菜单Gradle 选择Tasks任务
